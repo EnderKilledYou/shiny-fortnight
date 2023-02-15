@@ -18,8 +18,10 @@ async function interact(prompt_text: string) {
 
   return res;
 }
-function AudioPrompt() {
-  const prompt_text = speechService.speak();
+async function AudioPrompt() {
+  const prompt_text: string = await speechService.speak();
+
+  interact(prompt_text);
 }
 </script>
 
@@ -35,8 +37,8 @@ function AudioPrompt() {
           <p class="text-4xl font-bold uppercase">
             {{ appStore.counter.count }}
           </p>
-          <button type="button" class="btn-primary btn" @click="interact()">
-            increment
+          <button type="button" class="btn-primary btn" @click="AudioPrompt()">
+            Talk
           </button>
         </div>
       </div>
