@@ -8,3 +8,13 @@ export const counter = defineStore("counter", () => {
 
   return { count, increment };
 });
+export const conversation = defineStore("conversation", () => {
+  const parentMessageid = ref<string>("");
+  const conversationid = ref<string>("");
+
+  return { parentMessageid, conversationid };
+});
+export const settings = defineStore("settings", () => {
+  const apiKey = ref<string>("");
+  return { apiKey };
+});

@@ -1,4 +1,4 @@
-import { counter } from "./counter";
+import { conversation, counter } from "./counter";
 
 const appStore: any = {};
 
@@ -7,6 +7,7 @@ const appStore: any = {};
  */
 export const registerStore = () => {
   appStore.counter = counter();
+  appStore.conversation = conversation();
 };
 
 export default appStore;
